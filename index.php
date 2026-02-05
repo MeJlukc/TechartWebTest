@@ -8,12 +8,10 @@
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <img src="./images/logo.svg" alt="Logo" class="header-logo">
-            <p class="header-text">Галактический<br>
-                вестник
-            </p>
-        </div>
+        <img src="./images/logo.svg" alt="Logo" class="header-logo">
+        <p class="header-text">Галактический<br>
+            вестник
+        </p>
     </header>
     <main>
         <section class="last-news">
@@ -24,32 +22,32 @@
             <h1 class="news-title">Новости</h1>
             <div class="news-container">
                 <div class="news-item">
-                    <p class="news-item-date">11.06.2412</p>
+                    <p class="news-date">11.06.2412</p>
                     <h2 class="news-item-title">Возвращение этнографа</h2>
                     <p class="news-item-text">Cегодня с Проксимы вернулась этнографическая экспедиция Джона Голдрама.</p>
                     <a href="/" class="news-item-button-link">Подробнее</a>
                 </div>
                 <div class="news-item">
-                    <p class="news-item-date">11.06.2412</p>
+                    <p class="news-date">11.06.2412</p>
                     <h2 class="news-item-title">Несчастный случай с известной светской дивой</h2>
                     <p class="news-item-text">Светская дива Алиса Уткина попала под троллейбус, пытаясь уйти от преследования.</p>
                     <a href="/" class="news-item-button-link">Подробнее</a>
                 </div>
                 <div class="news-item">
-                    <p class="news-item-date">11.06.2412</p>
+                    <p class="news-date">11.06.2412</p>
                     <h2 class="news-item-title">Папа Римский совершил визит в систему Альфы Центавра</h2>
                     <p class="news-item-text">Папа Римский Жан-Клод XIV посетил с апостольским визитом систему Альфы Центавра. Он принял участие в ряде благотворительных мероприятий и совершил богослужение в соборе Ван-Дамм-де-Ури.</p>
                     <a href="/" class="news-item-button-link">Подробнее</a>
                 </div>
                 <div class="news-item">
-                    <p class="news-item-date">11.06.2412</p>
+                    <p class="news-date">11.06.2412</p>
                     <h2 class="news-item-title">На чемпионате по пустотной гребле победила команда с Фобоса</h2>
                     <p class="news-item-text">В поясе астероидов на проходившем в последние выходные этапе системного чемпионата по пустотной гребле команда с Фобоса одержала убедительную победу.</p>
                     <a href="/" class="news-item-button-link">Подробнее</a>
                 </div>
             </div>
             <ul class="pagination-group-list">
-                <li class="paginatin-item pagination-item-before">
+                <li class="pagination-item pagination-item-before">
                     <a href="" class="pagination-button-link-before">
                         <span class="pagination-before-arrow"></span>
                     </a>
@@ -63,7 +61,7 @@
                 <li class="pagination-item">
                     <a href="/" class="pagination-button-link">3</a>
                 </li>
-                <li class="paginatin-item pagination-item-next">
+                <li class="pagination-item pagination-item-next">
                     <a href="" class="pagination-button-link-next">
                         <span class="pagination-next-arrow"></span>
                     </a>

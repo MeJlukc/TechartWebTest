@@ -88,21 +88,27 @@ body {
     color: var(--color-grey)
 }
 
+.news-date {
+    display: inline-flex;
+    align-items: center;
+    height: 34px;
+    width: fit-content;
+    padding-inline: 18px;
+    padding-block: 6px;
+    font-size: 16px;
+    color: var(--color-grey);
+    background-color: var(--color-light-grey);
+    border-radius: 20px;
+}
 
 /* header styles */
 
 header {
-    padding-inline: var(--base-page-inline-indent);
-    padding-block: 37px;
-    border-bottom: 1px solid var(--color-black);
-}
-
-.header-container {
     display: flex;
-    column-gap: 20px;
-    width: 390px;
-    height: 74px;
-    padding-block: 4px;
+    padding-inline: var(--base-page-inline-indent);
+    padding-block: 40px;
+    column-gap: 25px;
+    border-bottom: 1px solid var(--color-black);
 }
 
 .header-text {
@@ -166,18 +172,6 @@ main {
     width: 48%;
 }
 
-.news-item-date {
-    display: inline-flex;
-    align-items: center;
-    height: 34px;
-    width: fit-content;
-    padding-inline: 18px;
-    padding-block: 6px;
-    font-size: 16px;
-    color: var(--color-grey);
-    background-color: var(--color-light-grey);
-    border-radius: 20px;
-}
 
 .news-item-title {
     font-size: 32px;
@@ -268,6 +262,7 @@ main {
     width: 24px;
     height: 22px;
     background: url('./images/arrow-right-for-pagination.svg') center/contain no-repeat;
+    /* использовал scale(-1), чтобы развернуть имеющуюся стрелку и не брать картинку вне макета */
     transform: scale(-1);
 }
 
@@ -299,7 +294,7 @@ footer {
     border-top: 1px solid var(--color-black);
 }
 
-/* news page styles */
+/* selected news page styles */
 
 .work-news-main {
     padding-inline: var(--base-page-inline-indent);
@@ -328,19 +323,6 @@ footer {
     flex-direction: column;
     width: 50%;
     row-gap: 40px;
-}
-
-.work-news-date {
-    display: inline-flex;
-    align-items: center;
-    height: 34px;
-    width: fit-content;
-    padding-inline: 18px;
-    padding-block: 6px;
-    font-size: 16px;
-    color: var(--color-grey);
-    background-color: var(--color-light-grey);
-    border-radius: 20px;
 }
 
 .work-news-announce {
@@ -385,6 +367,9 @@ footer {
   width: 90%;
   aspect-ratio: 1;
 }
+
+
+/* media query */
 
 @media (max-width: 1440px) {
     .news-item {
