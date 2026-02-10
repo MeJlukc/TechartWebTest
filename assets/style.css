@@ -1,3 +1,5 @@
+/* Подключение шрифтов */
+
 @font-face {
   font-family: 'Open Sans';
   src: url(./fonts/OpenSans.ttf) format('ttf');
@@ -21,6 +23,7 @@
     font-style: normal;
     font-display: swap;
  }
+
 
  /* Базовый сброс */
 
@@ -52,7 +55,8 @@ a {
   color: inherit;
 }
 
-/*  */
+
+/* Утилитарные переменные */
 
 :root {
   --color-white: #fff;
@@ -69,6 +73,9 @@ a {
   --base-page-inline-indent: 10.42vw;
 }
 
+
+/* Общие стили */
+
 body {
     display: flex;
     flex-direction: column;
@@ -80,9 +87,6 @@ body {
     font-weight: 400;
     line-height: 160%;
 }
-
-
-/* totalitary styles */
 
 .grey-text-color {
     color: var(--color-grey)
@@ -136,7 +140,7 @@ main {
     padding-inline: var(--base-page-inline-indent);
     height: 645px;
     width: 100vw;
-    background: url("./images/background.jpg") center/100% no-repeat;
+    background: var(--last-news-background) center/100% no-repeat;
     color: var(--color-white);
 }
 
@@ -191,6 +195,7 @@ main {
     height: 54px;
     width: fit-content;
     padding-inline: 40px;
+    margin-top: auto;
     font-size: 16px;
     font-weight: 600;
     gap: 10px;
