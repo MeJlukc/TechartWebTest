@@ -42,10 +42,10 @@
 
             <ul class="pagination-group-list">
                 <?php
-                if ($page > 1):
+                if ($hasPrev):
                 ?>
                     <li class="pagination-item pagination-item-before">
-                        <a href="/?page=<?=$page - 1?>" class="pagination-button-link-before">
+                        <a href="/?page=<?= $page - 1 ?>" class="pagination-button-link-before">
                             <span class="pagination-before-arrow"></span>
                         </a>
                     </li>
@@ -57,17 +57,17 @@
                 for ($i = $startPaginationPage; $i <= $endPaginationPage; $i++):
                 ?>
                     <li class="pagination-item">
-                        <a href="/?page=<?=$i?>" class="pagination-button-link"><?=$i?></a>
+                        <a href="/?page=<?=$i?>" class="pagination-button-link <?= $i == $page ? 'active' : '' ?>"><?=$i?></a>
                     </li>
                 <?php
                 endfor;
                 ?>
 
                 <?php
-                if (($pages > 3) && ($page + 2) < $pages):
+                if ($hasNext):
                 ?>
                     <li class="pagination-item pagination-item-next">
-                        <a href="/?page=<?=$page + 1?>" class="pagination-button-link-next">
+                        <a href="/?page=<?= $page + 1 ?>" class="pagination-button-link-next">
                             <span class="pagination-next-arrow"></span>
                         </a>
                     </li>

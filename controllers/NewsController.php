@@ -1,5 +1,6 @@
 <?php
 require 'models/News.php';
+require 'Pagination.php';
 
 class NewsController
 {
@@ -21,24 +22,9 @@ class NewsController
         $news = $this -> model -> getNewsList($limit, $offset);
 
         $lastNews = $this -> model -> getOneLastNews();
-
-        // pagination
         
-        if ($pages <= 3) {
-            $startPaginationPage = 1;
-            $endPaginationPage = $pages;
-        } else {
-            if ($page == 1) {
-                $startPaginationPage = 1;
-                $endPaginationPage = 3;
-            } else if ($page == $pages || $page + 1 == $pages) {
-                $startPaginationPage = $pages - 2;
-                $endPaginationPage = $pages;
-            } else {
-                $startPaginationPage = $page;
-                $endPaginationPage = $page + 2;
-            }
-        }
+        $pagination = new Pagination($page, $pages);
+        [$startPaginationPage, $endPaginationPage, $hasPrev, $hasNext] = $pagination -> getPagination();
 
         require 'views/main.php';
     }
