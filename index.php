@@ -5,7 +5,7 @@ require ROOT . '/controllers/NewsController.php';
 
 $controller = new NewsController($db);
 
-if ($_GET['id']) {
+if (isset($_GET['id'])) {
     $controller -> news($_GET['id']);
 } else {
     $controller -> main();

@@ -1,4 +1,13 @@
 <?php
-$db = new PDO("mysql:host=localhost;dbname=workspace__s244;charset=utf8", "root", "root");
+$host = 'localhost';
+$dbname = 'workspace__s244';;
+$user = 'root';
+$password = 'root';
+
+$db = new PDO(
+    "mysql:host=$host;dbname=$dbname;charset=utf8", 
+    $user, 
+    $password
+);
 
 ?>
