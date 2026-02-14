@@ -1,6 +1,6 @@
 <?php
 require ROOT . '/models/News.php';
-require ROOT . '/controllers/Pagination.php';
+require ROOT . '/controllers/utils/Pagination.php';
 
 class NewsController
 {
