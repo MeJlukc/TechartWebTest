@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Галактический вестник</title>
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="<?=BASE_URL?>assets/style.css">
 </head>
 <body>
     <header>
-        <img src="./assets/images/logo.svg" alt="Logo" class="header-logo">
+        <img src="<?=BASE_URL?>assets/images/logo.svg" alt="Logo" class="header-logo">
         <p class="header-text">Галактический<br>
             вестник
         </p>
@@ -21,12 +21,12 @@
                 <p class="news-date"><?=$news['fmt']?></p>
                 <h2 class="work-news-announce"><?=$news['announce']?></h2>
                 <span class="work-news-content"><?=$news['content']?></span>
-                <a class="work-news-back-button" href="/index.php">
+                <a class="work-news-back-button" href="<?=BASE_URL?>index.php">
                     <span class="arrow-left"></span>Назад к новостям
                 </a>
             </div>
             <div class="work-news-image-container">
-                <img src="./assets/images/<?=$news['image']?>" alt="Selected news image" class="work-news-image">
+                <img src="<?=BASE_URL?>assets/images/<?=$news['image']?>" alt="Selected news image" class="work-news-image">
             </div>
         </div>
     </main>
