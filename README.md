@@ -14,6 +14,8 @@
 - Код написан на языке PHP с использованием принципов ООП.
 - СУБД - MySQL. Подключение к БД через PDO.
 - Адаптивная верстка с использованием относительных единиц измерения.
-  
+
+<br>
+
 ![MainPage](./screenshots/main_page.png)  
 ![WorkNewsPage](./screenshots/work_news_page.png)
