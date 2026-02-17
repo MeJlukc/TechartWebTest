@@ -71,21 +71,32 @@ a {
   --font-family-alternative: 'Segoe UI', sans-serif;
 
   --base-page-inline-indent: 10.42vw;
+
+  --font-size-header: 1.75rem;
+  --font-size-footer: 1.25rem;
+  --font-size-h1: 4rem;
+  --font-size-h2: 2rem;
+  --font-size-content: 1.25rem;
+  --font-size-content-xl: 2rem;
+  --font-size-date: 1rem;
+  --font-size-path: 1rem;
+  --font-size-button: 1rem;
 }
 
 
 /* Общие стили */
 
+html {
+    font-size: 16px;
+}
+
 body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-
     font-family: var(--font-family-base);
-    font-size: 20px;
     color: var(--color-black);
     font-weight: 400;
-    line-height: 160%;
 }
 
 .grey-text-color {
@@ -99,7 +110,7 @@ body {
     width: fit-content;
     padding-inline: 18px;
     padding-block: 6px;
-    font-size: 16px;
+    font-size: var(--font-size-date);
     color: var(--color-grey);
     background-color: var(--color-light-grey);
     border-radius: 20px;
@@ -116,7 +127,7 @@ header {
 }
 
 .header-text {
-    font-size: 28px;
+    font-size: var(--font-size-header);;
     font-family: var(--font-family-alternative);
     font-weight: 400;
     color: var(--color-purple);
@@ -145,18 +156,18 @@ main {
 }
 
 .last-news-title {
-    font-size: 64px;
+    font-size: var(--font-size-h1);
     line-height: 100%;
 }
 
 .last-news-text {
-    font-size: 32px;
+    font-size: var(--font-size-content-xl);
 }
 
 .news-title {
     margin-inline: var(--base-page-inline-indent);
     padding-block: 55px;
-    font-size: 64px;
+    font-size: var(--font-size-h1);
 }
 
 .news-container {
@@ -178,14 +189,14 @@ main {
 
 
 .news-item-title {
-    font-size: 32px;
+    font-size: var(--font-size-h2);
     font-weight: 600;
     line-height: 140%;
 }
 
 .news-item-text {
-    font-size: 20px;
-    flex: 1;
+    font-size: var(--font-size-content);
+    line-height: 160%;
 }
 
 .news-item-button-link {
@@ -196,7 +207,7 @@ main {
     width: fit-content;
     padding-inline: 40px;
     margin-top: auto;
-    font-size: 16px;
+    font-size: var(--font-size-button);
     font-weight: 600;
     gap: 10px;
     text-transform: uppercase;
@@ -238,7 +249,7 @@ main {
     align-items: center;
     width: 55px;
     height: 55px;
-    font-size: 16px;
+    font-size: var(--font-size-button);
     font-weight: 600;
     color: var(--color-brand);
     border: 2px solid var(--color-brand);
@@ -302,6 +313,7 @@ footer {
     margin-inline: var(--base-page-inline-indent);
     padding-block: 80px;
     border-top: 1px solid var(--color-black);
+    font-size: var(--font-size-footer);
 }
 
 /* стили страницы с выбранными новостями */
@@ -311,13 +323,13 @@ footer {
 }
 
 .work-news-path {
-    font-size: 16px;
+    font-size: var(--font-size-path);
     margin-top: 72px;
 }
 
 .work-news-title {
     margin-top: 22px;
-    font-size: 64px;
+    font-size: var(--font-size-h1);
     line-height: 140%;
     font-weight: 600;
 }
@@ -337,9 +349,18 @@ footer {
 
 .work-news-announce {
     display: inline-block;
-    font-size: 32px;
+    font-size: var(--font-size-h2);
     font-weight: 600;
     color: var(--color-brand);
+    line-height: 100%;
+}
+
+.work-news-content {
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 22px;
+    font-size: var(--font-size-content);
+    line-height: 160%;
 }
 
 .work-news-back-button {
@@ -355,6 +376,7 @@ footer {
   border-radius: 30px;
   color: var(--color-brand);
   text-decoration: none;
+  font-size: var(--font-size-button);
   font-weight: 600;
   background-color: var(--color-white);
 }
@@ -382,7 +404,29 @@ footer {
 /* медиа запросы */
 
 @media (max-width: 1440px) {
+
+    :root {
+        --font-size-h1: 3rem;
+    }
+
     .news-item {
+        width: 100%;
+    }
+
+    .work-news-container {
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    .work-news-info-container {
+        order: 2;
+        width: 100%;
+        margin-top: 20px;
+        row-gap: 15px;
+    }
+
+    .work-news-image-container {
+        order: 1;
         width: 100%;
     }
 }
@@ -396,6 +440,10 @@ footer {
 
     .work-news-container {
         flex-direction: column;
+    }
+
+    .work-news-path {
+        margin-top: 36px;
     }
 }
 
