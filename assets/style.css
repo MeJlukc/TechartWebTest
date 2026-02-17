@@ -343,7 +343,7 @@ footer {
     font-size: var(--font-size-h2);
     font-weight: 600;
     color: var(--color-brand);
-    line-height: 100%;
+    line-height: 140%;
 }
 
 .work-news-content {
@@ -581,6 +581,7 @@ footer {
     }
 
     .work-news-content {
+        row-gap: 10px;
         font-size: 14px;
         line-height: 140%;
     }
