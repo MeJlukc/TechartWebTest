@@ -305,11 +305,6 @@ main {
     height: 55px;
 }
 
-.pagination__link--before:hover,
-.pagination__link--next:hover {
-    background-color: var(--color-white);
-}
-
 .pagination__arrow {
     display: inline-flex;
     width: 24px;
@@ -324,6 +319,11 @@ main {
 
 .pagination__arrow--next {
     background: url('./images/arrow-right-for-pagination.svg') center/contain no-repeat;
+}
+
+.pagination__link--before:hover .pagination__arrow--before,
+.pagination__link--next:hover .pagination__arrow--next {
+    filter: brightness(0) invert(1);
 }
 
 
@@ -386,6 +386,17 @@ main {
   width: 25px;
   height: 25px;
   background: url('./images/arrow-left-brand.svg') center/contain no-repeat;
+}
+
+.work-news__button:hover {
+    background-color: var(--color-brand);
+    color: var(--color-white);
+}
+
+.work-news__button:hover::before {
+    background: url('./images/arrow-right-white.svg') center/contain no-repeat;
+    /* использовал scale(-1), чтобы развернуть имеющуюся стрелку и не брать картинку вне макета */
+    transform: scale(-1);
 }
 
 .work-news__media {
