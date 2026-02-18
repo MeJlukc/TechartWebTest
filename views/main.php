@@ -13,22 +13,15 @@
     ?>
 
     <main>
+
         <?php
         require ROOT . '/views/components/last_news.php';
         ?>
         
-        <section class="news">
-            <h1 class="news-title">Новости</h1>
-
-            <?php
-            require ROOT . '/views/components/news_list.php';
-            ?>
-
-            <?php
-            require ROOT . '/views/components/pagination.php';
-            ?>
-
-        </section>
+        <?php
+        require ROOT . '/views/components/news_list.php';
+        ?>
+        
     </main>
     
     <?php

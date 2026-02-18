@@ -98,11 +98,11 @@ body {
     font-weight: 400;
 }
 
-.grey-text-color {
+.text-color__grey {
     color: var(--color-grey)
 }
 
-.news-date {
+.date {
     display: inline-flex;
     align-items: center;
     height: 34px;
@@ -135,9 +135,26 @@ body {
     transition: 0.3s;
 }
 
-/* header стили */
+.arrow__before,
+.arrow__next {
+    display: inline-flex;
+    width: 24px;
+    height: 22px;
+}
 
-header {
+.arrow__before {
+    background: url('./images/arrow-right-for-pagination.svg') center/contain no-repeat;
+    /* использовал scale(-1), чтобы развернуть имеющуюся стрелку и не брать картинку вне макета */
+    transform: scale(-1);
+}
+
+.arrow__next {
+    background: url('./images/arrow-right-for-pagination.svg') center/contain no-repeat;
+}
+
+/* header */
+
+.header {
     display: flex;
     padding-inline: var(--base-page-inline-indent);
     padding-block: 40px;
@@ -145,7 +162,7 @@ header {
     border-bottom: 1px solid var(--color-black);
 }
 
-.header-text {
+.header__title {
     font-size: var(--font-size-header);
     font-family: var(--font-family-alternative);
     font-weight: 400;
@@ -162,7 +179,9 @@ main {
     flex-direction: column;
 }
 
-.last-news-container {
+/* last_news */
+
+.last-news {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -174,22 +193,24 @@ main {
     color: var(--color-white);
 }
 
-.last-news-title {
+.last-news__title {
     font-size: var(--font-size-h1);
     line-height: 100%;
 }
 
-.last-news-text {
+.last-news__text {
     font-size: var(--font-size-content-xl);
 }
 
-.news-title {
+/* news_list */
+
+.news__title {
     margin-inline: var(--base-page-inline-indent);
     padding-block: 55px;
     font-size: var(--font-size-h1);
 }
 
-.news-container {
+.news__list {
     display: flex;
     justify-content: space-between;
     column-gap: 40px;
@@ -198,7 +219,7 @@ main {
     margin-inline: var(--base-page-inline-indent);
 }
 
-.news-item {
+.news-card {
     display: flex;
     flex-direction: column;
     row-gap: 30px;
@@ -206,19 +227,18 @@ main {
     width: 48%;
 }
 
-
-.news-item-title {
+.news-card__title {
     font-size: var(--font-size-h2);
     font-weight: 600;
     line-height: 140%;
 }
 
-.news-item-text {
+.news-card__text {
     font-size: var(--font-size-content);
     line-height: 160%;
 }
 
-.news-item-button-link::after {
+.news-card__button::after {
     content: '';
     width: 25px;
     height: 25px;
@@ -226,16 +246,18 @@ main {
     transition: 0.3s;   
 }
 
-.news-item-button-link:hover {
+.news-card__button:hover {
     color: var(--color-white);
     background-color: var(--color-brand);
 }
 
-.news-item-button-link:hover::after {
+.news-card__button:hover::after {
     background: url(./images/arrow-right-white.svg) center/contain no-repeat;
 }
 
-.pagination-group-list {
+/* pagination */
+
+.pagination__list {
     display: flex;
     justify-content: end;
     align-items: center;
@@ -244,7 +266,7 @@ main {
     column-gap: 16px;
 }
 
-.pagination-button-link {
+.pagination__link {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -258,18 +280,18 @@ main {
     transition: 0.3s;
 }
 
-.pagination-button-link.active {
+.pagination__link.pagination__link--active {
     background-color: var(--color-brand);
     color: var(--color-white);
 }
 
-.pagination-button-link:hover {
+.pagination__link:hover {
     background-color: var(--color-brand);
     color: var(--color-white);
 }
 
-.pagination-button-link-before,
-.pagination-button-link-next {
+.pagination__control__before,
+.pagination__control__next {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -280,65 +302,48 @@ main {
     border-radius: 50px;
 }
 
-.pagination-before-arrow,
-.pagination-next-arrow {
-    display: inline-flex;
-    width: 24px;
-    height: 22px;
-}
-
-.pagination-before-arrow {
-    background: url('./images/arrow-right-for-pagination.svg') center/contain no-repeat;
-    /* использовал scale(-1), чтобы развернуть имеющуюся стрелку и не брать картинку вне макета */
-    transform: scale(-1);
-}
-
-.pagination-next-arrow {
-    background: url('./images/arrow-right-for-pagination.svg') center/contain no-repeat;
-}
-
 
 /* footer стили */
 
-footer {
+.footer {
     margin-inline: var(--base-page-inline-indent);
     padding-block: 80px;
     border-top: 1px solid var(--color-black);
     font-size: var(--font-size-footer);
 }
 
-/* стили страницы с выбранными новостями */
+/* work news */
 
-.work-news-main {
+.work-news {
     padding-inline: var(--base-page-inline-indent);
 }
 
-.work-news-path {
+.work-news__path {
     font-size: var(--font-size-path);
     margin-top: 72px;
 }
 
-.work-news-title {
+.work-news__title {
     margin-top: 22px;
     font-size: var(--font-size-h1);
     line-height: 140%;
     font-weight: 600;
 }
 
-.work-news-container {
+.work-news__container {
     display: flex;
     margin-top: 63px;
     margin-bottom: 135px;
 }
 
-.work-news-info-container {
+.work-news__info {
     display: flex;
     flex-direction: column;
     width: 50%;
     row-gap: 40px;
 }
 
-.work-news-announce {
+.work-news__announce {
     display: inline-block;
     font-size: var(--font-size-h2);
     font-weight: 600;
@@ -346,7 +351,7 @@ footer {
     line-height: 140%;
 }
 
-.work-news-content {
+.work-news__content {
     display: inline-flex;
     flex-direction: column;
     row-gap: 22px;
@@ -354,25 +359,25 @@ footer {
     line-height: 160%;
 }
 
-.work-news-back-button {
+.work-news__button {
     gap: 5px;
 }
 
-.work-news-back-button::before {
+.work-news__button::before {
   content: '';
   width: 25px;
   height: 25px;
   background: url('./images/arrow-left-brand.svg') center/contain no-repeat;
 }
 
-.work-news-image-container {
+.work-news__media {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50%;
 }
 
-.work-news-image {
+.work-news__image {
   width: 90%;
   aspect-ratio: 1;
 }
@@ -386,39 +391,39 @@ footer {
         --font-size-h1: 3rem;
     }
 
-    .news-item {
+    .news-card {
         width: 100%;
     }
 
-    .work-news-path {
+    .work-news__path {
         margin-top: 36px;
     }
 
-    .work-news-container {
+    .work-news__container {
         flex-direction: column;
         margin-top: 20px;
         margin-bottom: 80px;
     }
 
-    .work-news-info-container {
+    .work-news__info {
         order: 2;
         width: 100%;
         margin-top: 30px;
         row-gap: 15px;
     }
 
-    .work-news-image-container {
+    .work-news__media {
         order: 1;
         width: 100%;
     }
 
-    .work-news-back-button {
+    .work-news__button {
         margin-top: 30px;
     }
 }
 
 @media (max-width: 1024px) {
-    footer {
+    .footer {
         margin-inline: 0;
         padding-inline: var(--base-page-inline-indent);
         padding-block: 40px;
@@ -426,77 +431,88 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .last-news-container {
+    .last-news {
         height: 420px;
     }
 
-    .last-news-title {
+    .last-news__title {
         font-size: 48px;
         line-height: 100%;
     }
 
-    .last-news-text {
+    .last-news__text {
         font-size: 24px;
     }
 }
 
 @media (max-width: 480px) {
-    header {
+
+    .arrow__before {
+        width: 18px;
+        height: 17px;
+    }
+
+    .arrow__next {
+        width: 18px;
+        height: 17px;
+    }
+
+    .header {
         padding-block: 15px;
         column-gap: 10px;
     }
 
-    .header-logo {
+    .header__logo {
         height: 48px;
     }
 
-    .header-text {
+    .header__title {
         font-size: 18px;
     }
 
-    .last-news-container {
+    .last-news {
         height: 210px;
     }
 
-    .last-news-title {
+    .last-news__title {
         font-size: 24px;
         line-height: 100%;
     }
 
-    .last-news-text {
+    .last-news__text {
         font-size: 16px;
         line-height: 120%;
     }
 
-    .news-title {
+    .news__title {
         font-size: 48px;
         padding-block: 30px;
     }
 
-    .news-container {
+    .news__list {
         row-gap: 30px;
     }
 
-    .news-item {
+    .news-card {
         row-gap: 10px;
     }
 
-    .news-date {
+    .date {
         font-size: 12px;
         padding-inline: 9px;
         padding-block: 1px;
     }
 
-    .news-item-title {
+    .news-card__title {
         font-size: 24px;
     }
 
-    .news-item-text {
+    .news-card__text {
         font-size: 14px;
         line-height: 140%;
     }
 
-    .news-item-button-link {
+    .news-card__button {
         height: 32px;
         gap: 5px;
         margin-top: 15px;
@@ -504,96 +520,86 @@ footer {
         font-size: 12px;
     }
 
-    .news-item-button-link::after {
+    .news-card__button::after {
         content: '';
         width: 18px;
         height: 18px;
         background: url(./images/arrow-right-brand.svg) center/contain no-repeat;   
     }
 
-    .pagination-group-list {
+    .pagination__list {
         margin-block: 30px;
         column-gap: 8px;
     }
 
-    .pagination-button-link {
+    .pagination__link {
         width: 35px;
         height: 35px;
         font-size: 12px;
     }
 
-    .pagination-button-link-before {
+    .pagination__control__before {
         width: 65px;
         height: 35px;
     }
 
-    .pagination-before-arrow {
-        width: 18px;
-        height: 17px;
-    }
-
-    .pagination-button-link-next {
+    .pagination__control__next {
         width: 65px;
         height: 35px;
     }
 
-    .pagination-next-arrow {
-        width: 18px;
-        height: 17px;
-    }
-
-    footer {
+    .footer {
         padding-block: 15px;
         font-size: 12px;
     }
 
-    .work-news-container {
+    .work-news__container {
         margin-top: 20px;
         margin-bottom: 40px;
         flex-direction: column;
     }
 
-    .work-news-info-container {
+    .work-news__info {
         width: 100%;
         margin-top: 20px;
         row-gap: 15px;
     }
 
-    .work-news-image-container {
+    .work-news__media {
         width: 100%;
     }
 
-    .work-news-image {
+    .work-news__image {
         width: 100%;
     }
 
-    .work-news-path {
+    .work-news__path {
         margin-top: 20px;
         font-size: 12px;
     }
 
-    .work-news-title {
+    .work-news__title {
         display: none;
     }
 
-    .work-news-announce {
+    .work-news__announce {
         font-size: 18px;
     }
 
-    .work-news-content {
+    .work-news__content {
         row-gap: 10px;
         font-size: 14px;
         line-height: 140%;
     }
 
-    .work-news-back-button {
+    .work-news__button {
         height: 35px;
         margin-top: 15px;
         padding-inline: 10px;
         font-size: 12px;
     }
 
-    .work-news-back-button::before {
+    .work-news__button::before {
         width: 18px;
         height: 18px;
     }
