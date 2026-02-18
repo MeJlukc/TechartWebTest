@@ -1,4 +1,6 @@
-/* Подключение шрифтов */
+/* =====================
+    Connecting fonts / Подключение шрифтов
+===================== */
 
 @font-face {
   font-family: 'Open Sans';
@@ -25,7 +27,9 @@
  }
 
 
- /* Базовый сброс */
+/* =====================
+   Basic reset / Базовый сброс
+===================== */
 
 *, *::before, *::after {
   box-sizing: border-box; /* Удобный расчет размеров */
@@ -56,7 +60,9 @@ a {
 }
 
 
-/* Утилитарные переменные */
+/* =====================
+    Utility variables and classes / Утилитарные переменные и классы
+===================== */
 
 :root {
   --color-white: #fff;
@@ -83,9 +89,6 @@ a {
   --font-size-button: 1rem;
 }
 
-
-/* Общие стили */
-
 html {
     font-size: 16px;
 }
@@ -98,7 +101,7 @@ body {
     font-weight: 400;
 }
 
-.text-color__grey {
+.text-color--grey {
     color: var(--color-grey)
 }
 
@@ -122,8 +125,6 @@ body {
     margin-top: auto;
     padding-inline: 40px;
     gap: 10px;
-    height: 54px;
-    width: fit-content;
     border: 2px solid var(--color-brand);
     border-radius: 30px;
     color: var(--color-brand);
@@ -135,24 +136,10 @@ body {
     transition: 0.3s;
 }
 
-.arrow__before,
-.arrow__next {
-    display: inline-flex;
-    width: 24px;
-    height: 22px;
-}
 
-.arrow__before {
-    background: url('./images/arrow-right-for-pagination.svg') center/contain no-repeat;
-    /* использовал scale(-1), чтобы развернуть имеющуюся стрелку и не брать картинку вне макета */
-    transform: scale(-1);
-}
-
-.arrow__next {
-    background: url('./images/arrow-right-for-pagination.svg') center/contain no-repeat;
-}
-
-/* header */
+/* =====================
+    header
+===================== */
 
 .header {
     display: flex;
@@ -172,14 +159,31 @@ body {
     line-height: 132%;
 }
 
-/* main page стили */
+
+/* =====================
+    footer
+===================== */
+
+.footer {
+    margin-inline: var(--base-page-inline-indent);
+    padding-block: 80px;
+    border-top: 1px solid var(--color-black);
+    font-size: var(--font-size-footer);
+}
+
+
+/* =====================
+    main / Файл main.php
+===================== */
 
 main {
     display: flex;
     flex-direction: column;
 }
 
-/* last_news */
+/* =====================
+    last_news / Последняя новость
+===================== */
 
 .last-news {
     display: flex;
@@ -189,7 +193,7 @@ main {
     padding-inline: var(--base-page-inline-indent);
     height: 645px;
     width: 100%;
-    background: var(--last-news-background) center/100% no-repeat;
+    background: var(--last-news__background) center/100% no-repeat;
     color: var(--color-white);
 }
 
@@ -202,7 +206,9 @@ main {
     font-size: var(--font-size-content-xl);
 }
 
-/* news_list */
+/* =====================
+    news_list / Новости на главной странице
+===================== */
 
 .news__title {
     margin-inline: var(--base-page-inline-indent);
@@ -238,6 +244,11 @@ main {
     line-height: 160%;
 }
 
+.news-card__button {
+    height: 54px;
+    width: fit-content;
+}
+
 .news-card__button::after {
     content: '';
     width: 25px;
@@ -255,7 +266,9 @@ main {
     background: url(./images/arrow-right-white.svg) center/contain no-repeat;
 }
 
-/* pagination */
+/* =====================
+    Pagination / Пагинация
+===================== */
 
 .pagination__list {
     display: flex;
@@ -270,49 +283,53 @@ main {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 55px;
-    height: 55px;
     font-size: var(--font-size-button);
     font-weight: 600;
     color: var(--color-brand);
+    width: 55px;
+    height: 55px;
     border: 2px solid var(--color-brand);
     border-radius: 50px;
     transition: 0.3s;
 }
 
-.pagination__link.pagination__link--active {
-    background-color: var(--color-brand);
-    color: var(--color-white);
-}
-
+.pagination__link.pagination__link--active,
 .pagination__link:hover {
     background-color: var(--color-brand);
     color: var(--color-white);
 }
 
-.pagination__control__before,
-.pagination__control__next {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+.pagination__link--before,
+.pagination__link--next {
     width: 106px;
     height: 55px;
-    color: var(--color-brand);
-    border: 2px solid var(--color-brand);
-    border-radius: 50px;
+}
+
+.pagination__link--before:hover,
+.pagination__link--next:hover {
+    background-color: var(--color-white);
+}
+
+.pagination__arrow {
+    display: inline-flex;
+    width: 24px;
+    height: 22px;
+}
+
+.pagination__arrow--before {
+    background: url('./images/arrow-right-for-pagination.svg') center/contain no-repeat;
+    /* использовал scale(-1), чтобы развернуть имеющуюся стрелку и не брать картинку вне макета */
+    transform: scale(-1);
+}
+
+.pagination__arrow--next {
+    background: url('./images/arrow-right-for-pagination.svg') center/contain no-repeat;
 }
 
 
-/* footer стили */
-
-.footer {
-    margin-inline: var(--base-page-inline-indent);
-    padding-block: 80px;
-    border-top: 1px solid var(--color-black);
-    font-size: var(--font-size-footer);
-}
-
-/* work news */
+/* =====================
+    work_news / Страница с выбранной новостью
+===================== */
 
 .work-news {
     padding-inline: var(--base-page-inline-indent);
@@ -360,7 +377,8 @@ main {
 }
 
 .work-news__button {
-    gap: 5px;
+    height: 54px;
+    width: fit-content;
 }
 
 .work-news__button::before {
@@ -383,13 +401,11 @@ main {
 }
 
 
-/* медиа запросы */
+/* =====================
+    Media query / Медиа запросы
+===================== */
 
 @media (max-width: 1440px) {
-
-    :root {
-        --font-size-h1: 3rem;
-    }
 
     .news-card {
         width: 100%;
@@ -434,27 +450,19 @@ main {
     .last-news {
         height: 420px;
     }
-
-    .last-news__title {
-        font-size: 48px;
-        line-height: 100%;
-    }
-
-    .last-news__text {
-        font-size: 24px;
-    }
 }
 
 @media (max-width: 480px) {
-
-    .arrow__before {
-        width: 18px;
-        height: 17px;
-    }
-
-    .arrow__next {
-        width: 18px;
-        height: 17px;
+    :root {
+        --font-size-header: 18px;
+        --font-size-footer: 0.75rem;
+        --font-size-h1: 1.5rem;
+        --font-size-h2: 1.25rem;
+        --font-size-content: 1rem;
+        --font-size-content-xl: 1rem;
+        --font-size-date: 0.75rem;
+        --font-size-path: 0.75rem;
+        --font-size-button: 0.75rem;
     }
 
     .header {
@@ -466,91 +474,47 @@ main {
         height: 48px;
     }
 
-    .header__title {
-        font-size: 18px;
-    }
-
     .last-news {
         height: 210px;
-    }
-
-    .last-news__title {
-        font-size: 24px;
-        line-height: 100%;
-    }
-
-    .last-news__text {
-        font-size: 16px;
-        line-height: 120%;
+        row-gap: 15px;
     }
 
     .news__title {
-        font-size: 48px;
         padding-block: 30px;
     }
 
     .news__list {
-        row-gap: 30px;
+        row-gap: 40px;
     }
 
     .news-card {
         row-gap: 10px;
     }
 
-    .date {
-        font-size: 12px;
-        padding-inline: 9px;
-        padding-block: 1px;
-    }
-
-    .news-card__title {
-        font-size: 24px;
-    }
-
-    .news-card__text {
-        font-size: 14px;
-        line-height: 140%;
-    }
-
     .news-card__button {
-        height: 32px;
-        gap: 5px;
-        margin-top: 15px;
+        height: 35px;
         padding-inline: 15px;
-        font-size: 12px;
+        gap: 5px;
     }
 
     .news-card__button::after {
-        content: '';
         width: 18px;
         height: 18px;
-        background: url(./images/arrow-right-brand.svg) center/contain no-repeat;   
     }
 
     .pagination__list {
-        margin-block: 30px;
+        margin-block: 40px;
         column-gap: 8px;
     }
 
     .pagination__link {
+        height: 35px;
         width: 35px;
-        height: 35px;
-        font-size: 12px;
     }
 
-    .pagination__control__before {
-        width: 65px;
-        height: 35px;
-    }
-
-    .pagination__control__next {
-        width: 65px;
-        height: 35px;
-    }
-
-    .footer {
-        padding-block: 15px;
-        font-size: 12px;
+    .pagination__link--before,
+    .pagination__link--next {
+        width: 55px;
     }
 
     .work-news__container {
@@ -561,7 +525,6 @@ main {
 
     .work-news__info {
         width: 100%;
-        margin-top: 20px;
         row-gap: 15px;
     }
 
@@ -575,32 +538,25 @@ main {
 
     .work-news__path {
         margin-top: 20px;
-        font-size: 12px;
     }
 
     .work-news__title {
         display: none;
     }
 
-    .work-news__announce {
-        font-size: 18px;
-    }
-
     .work-news__content {
         row-gap: 10px;
-        font-size: 14px;
         line-height: 140%;
     }
 
     .work-news__button {
         height: 35px;
-        margin-top: 15px;
-        padding-inline: 10px;
-        font-size: 12px;
+        padding-inline: 25px;
+        gap: 5px;
     }
 
-    .work-news__button::before {
-        width: 18px;
-        height: 18px;
+    .footer {
+        padding-block: 20px;
+        padding-inline: var(--base-page-inline-indent);
     }
 }

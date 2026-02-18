@@ -3,8 +3,8 @@
     if ($hasPrev):
     ?>
         <li class="pagination__item">
-            <a href="<?=BASE_URL?>?page=<?= $page - 1 ?>" class="pagination__control__before">
-                <span class="arrow__before"></span>
+            <a href="<?=BASE_URL?>?page=<?= $page - 1 ?>" class="pagination__link pagination__link--before">
+                <span class="pagination__arrow pagination__arrow--before"></span>
             </a>
         </li>
     <?php
@@ -25,8 +25,8 @@
     if ($hasNext):
     ?>
         <li class="pagination__item">
-            <a href="<?=BASE_URL?>?page=<?= $page + 1 ?>" class="pagination__control__next">
-                <span class="arrow__next"></span>
+            <a href="<?=BASE_URL?>?page=<?= $page + 1 ?>" class="pagination__link pagination__link--next">
+                <span class="pagination__arrow pagination__arrow--next"></span>
             </a>
         </li>
     <?php
