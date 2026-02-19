@@ -11,13 +11,18 @@ class NewsController
     }
 
     public function main() {
-        $page = $_GET['page'] ?? 1;
+        $page = (int)$_GET['page'] > 0 ? (int)$_GET['page'] : 1;
 
         $limit = 4;
-        $offset = ($page - 1) * $limit;
 
         $total = $this -> model -> getTotalNews();
         $pages = ceil($total / $limit);
+
+        if ($page > $pages) {
+            $page = 1;
+        }
+
+        $offset = ($page - 1) * $limit;
 
         $news = $this -> model -> getNewsList($limit, $offset);
 
@@ -30,6 +35,13 @@ class NewsController
     }
 
     public function news($id) {
+        $total = $this -> model -> getTotalNews();
+
+        if ($id < 1 || $id > $total) {
+            $this -> main();
+            return;
+        } 
+
         $news = $this -> model -> getOneNews($id);
 
         require 'views/news.php';
