@@ -96,6 +96,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
     font-family: var(--font-family-base);
     color: var(--color-black);
     font-weight: 400;
@@ -134,6 +135,11 @@ body {
     font-weight: 600;
     background-color: var(--color-white);
     transition: 0.3s;
+}
+
+.button:hover {
+    background-color: var(--color-brand);
+    color: var(--color-white);
 }
 
 
@@ -255,11 +261,6 @@ main {
     height: 25px;
     background: url(./images/arrow-right-brand.svg) center/contain no-repeat;
     transition: 0.3s;   
-}
-
-.news-card__button:hover {
-    color: var(--color-white);
-    background-color: var(--color-brand);
 }
 
 .news-card__button:hover::after {
@@ -388,10 +389,10 @@ main {
   background: url('./images/arrow-left-brand.svg') center/contain no-repeat;
 }
 
-.work-news__button:hover {
+/* .work-news__button:hover {
     background-color: var(--color-brand);
     color: var(--color-white);
-}
+} */
 
 .work-news__button:hover::before {
     background: url('./images/arrow-right-white.svg') center/contain no-repeat;
@@ -409,6 +410,26 @@ main {
 .work-news__image {
   width: 90%;
   aspect-ratio: 1;
+}
+
+/* =====================
+    404 page / Страница 404
+===================== */
+.not-found {
+    flex: 1;
+}
+
+.not-found__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: var(--base-page-inline-indent);
+    padding-block: 100px;
+    gap: 30px;
+}
+
+.not-found__button {
+    height: 54px;
 }
 
 

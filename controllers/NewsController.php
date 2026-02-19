@@ -10,16 +10,23 @@ class NewsController
         $this -> model = new News($db);
     }
 
+    public function notFound() {
+        require ROOT . '/views/404.php';
+    }
+
     public function main() {
-        $page = (int)$_GET['page'] > 0 ? (int)$_GET['page'] : 1;
+        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
         $limit = 4;
 
         $total = $this -> model -> getTotalNews();
         $pages = ceil($total / $limit);
 
-        if ($page > $pages) {
+        if ($page < 1) {
             $page = 1;
+        } else if ($page > $pages) {
+            $this -> notFound();
+            return;
         }
 
         $offset = ($page - 1) * $limit;
@@ -31,20 +38,20 @@ class NewsController
         $pagination = new Pagination($page, $pages);
         [$startPaginationPage, $endPaginationPage, $hasPrev, $hasNext] = $pagination -> getPagination();
 
-        require 'views/main.php';
+        require ROOT . '/views/main.php';
     }
 
     public function news($id) {
         $total = $this -> model -> getTotalNews();
 
-        if ($id < 1 || $id > $total) {
-            $this -> main();
+        if ((int)$id < 1 || (int)$id > $total) {
+            $this -> notFound();
             return;
         } 
 
         $news = $this -> model -> getOneNews($id);
 
-        require 'views/news.php';
+        require ROOT . '/views/news.php';
     }
 }
 
