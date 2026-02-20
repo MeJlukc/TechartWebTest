@@ -44,7 +44,7 @@ class NewsController
     public function news($id) {
         $total = $this -> model -> getTotalNews();
 
-        if ((int)$id < 1 || (int)$id > $total) {
+        if ($id < 1 || $id > $total) {
             $this -> notFound();
             return;
         } 
