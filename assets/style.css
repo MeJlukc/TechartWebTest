@@ -160,7 +160,7 @@ body {
     font-weight: 400;
     color: var(--color-purple);
     text-transform: uppercase;
-    letter-spacing: 12.5%;
+    letter-spacing: 0.125em;
     line-height: 132%;
 }
 
@@ -199,7 +199,7 @@ body {
     padding-inline: var(--base-page-inline-indent);
     height: 646px;
     width: 100%;
-    background: var(--last-news__background) center/100% no-repeat;
+    background: var(--last-news__background, none) center/100% no-repeat;
     color: var(--color-white);
 }
 
