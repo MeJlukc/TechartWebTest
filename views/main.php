@@ -12,7 +12,7 @@
     require ROOT . '/views/components/header.php';
     ?>
 
-    <main>
+    <main class="main-page">
 
         <?php
         require ROOT . '/views/components/last_news.php';
